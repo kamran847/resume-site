@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خوش آمدید - سانیا کارتون</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Tahoma, sans-serif;
+            background: url('{% static "resume/factory-bg.jpg" %}') no-repeat center center fixed;
+            background-size: cover;
+            color: green;
+            text-align: center;
+        }
+        .welcome-box {
+            background-color: rgba(#ff4d4d);
+            padding: 50px 20px;
+            margin: 100px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+        }
+        .welcome-box h1 {
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .buttons a {
+            display: inline-block;
+            background-color: #00b894;
+            color: white;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .buttons a:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-box">
+        <h1>به سایت کاریابی کارخانه سانیا کارتون ایرانیان خوش آمدید</h1>
+        <div class="buttons">
+            <a href="{% url 'resume_form' %}">فرم استخدام</a>
+            <a href="/admin/">ورود مدیر</a>
+        </div>
+    </div>
+</body>
+</html>
