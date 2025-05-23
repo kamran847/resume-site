@@ -6,29 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خوش آمدید - سانیا کارتون</title>
     <style>
+        @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
         body {
             margin: 0;
-            font-family: Tahoma, sans-serif;
+            font-family: Vazir, Tahoma, sans-serif;
             background: url('{% static "resume/factory-bg.jpg" %}') no-repeat center center fixed;
             background-size: cover;
-            color: green;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             text-align: center;
         }
+
         .welcome-box {
-            background-color: rgba(#ff4d4d);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 50px 20px;
-            margin: 100px auto;
             width: 90%;
             max-width: 600px;
             border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
         }
+
         .welcome-box h1 {
-            font-size: 50px;
-            margin-bottom: 50px;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2d3436;
         }
+
         .buttons {
-            margin-top: 30px;
+            margin-top: 20px;
         }
+
         .buttons a {
             display: inline-block;
             background-color: #00b894;
@@ -38,9 +50,12 @@
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
+
         .buttons a:hover {
             background-color: #ff4d4d;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -54,3 +69,4 @@
     </div>
 </body>
 </html>
+
