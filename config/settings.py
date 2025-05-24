@@ -125,3 +125,18 @@ import os
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # ← اضافه کن
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# این گزینه باعث میشه در زمان collectstatic، فایل‌ها درست جمع‌آوری بشن
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'resume', 'static'),
+]
+
+# اگه از Whitenoise استفاده می‌کنی (پیشنهاد می‌کنم بزنی)
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
+# فشرده‌سازی و کش فایل‌های استاتیک
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
