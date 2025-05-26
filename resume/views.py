@@ -21,4 +21,4 @@ def application_status(request, id):
     context = {
         'application': application
     }
-    return render(request, 'application_status.html', context)
+    return render(request, 'resume/application_status.html', context)
