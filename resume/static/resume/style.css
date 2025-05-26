@@ -9,7 +9,7 @@ body {
     .welcome-box {
         padding: 30px 10px;
         margin: 50px auto;
-        width: 95%;
+        #2c3e50; 95%;
     }
 
     .welcome-box h1 {

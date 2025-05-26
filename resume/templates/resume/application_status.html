@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>وضعیت درخواست شما</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f7f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .status {
+            font-weight: bold;
+            font-size: 20px;
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        .note {
+            background-color: #e8f4fd;
+            border: 1px solid #b3d4fc;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #34495e;
+            white-space: pre-wrap;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>وضعیت درخواست شما</h1>
+
+        <div class="info">
+            <p><strong>نام:</strong> {{ application.name }}</p>
+            <p><strong>ایمیل:</strong> {{ application.email }}</p>
+            <p><strong>تاریخ ارسال:</strong> {{ application.submitted_at|date:"Y/m/d H:i" }}</p>
+        </div>
+
+        <div class="status">
+            وضعیت فعلی درخواست: 
+            {% if application.status %}
+                {{ application.status }}
+            {% else %}
+                در انتظار بررسی
+            {% endif %}
+        </div>
+
+        <div class="note">
+            <strong>یادداشت مدیر:</strong><br>
+            {% if application.manager_note %}
+                {{ application.manager_note }}
+            {% else %}
+                هیچ یادداشتی ثبت نشده است.
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <p>از اینکه با ما همراهید متشکریم.</p>
+        </div>
+    </div>
+</body>
+</html>
